@@ -1,0 +1,33 @@
+{
+  "name": "slopwork-discord-bot",
+  "version": "1.0.0",
+  "description": "Discord bot that monitors slopwork.xyz for new tasks and bid updates",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "nodemon bot.js",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "slopwork",
+    "solana",
+    "task-marketplace"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.5",
+    "cheerio": "^1.0.0-rc.12",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1",
+    "node-cron": "^3.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

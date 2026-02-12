@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  slopwork-bot:
+    build: .
+    container_name: slopwork-discord-bot
+    restart: unless-stopped
+    environment:
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - CHANNEL_ID=${CHANNEL_ID}
+      - CHECK_INTERVAL=${CHECK_INTERVAL:-*/5 * * * *}
+    volumes:
+      # Persist cache between restarts
+      - ./task_cache.json:/usr/src/app/task_cache.json
+    networks:
+      - bot-network
+
+networks:
+  bot-network:
+    driver: bridge
